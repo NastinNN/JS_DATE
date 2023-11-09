@@ -17,7 +17,7 @@ function task2() {
       console.log(`До нового года осталось ${koldayNY.toFixed(0)} дня`)
 }
 
-function task3() {
+function task4() {
       let ms=prompt("Введите количество милисекунд");
       if(Number.isInteger(ms) || ms<0 || isNaN(ms))
         alert("Некорректный ввод данных");
