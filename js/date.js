@@ -38,5 +38,33 @@ function task4() {
 }
 
 function task5() {
-      
+      let day;
+      let mounth;
+      let year;
+      while (true)
+      {
+            day=prompt("Введите день вашего рождения [1-31]");
+            if (isNaN(day) || day<1 || day>31)
+                  alert("Некорректный ввод. Попробуйте снова");
+            else break;
+      }
+      while (true)
+      {
+            mounth=prompt("Введите месяц ващего рождения [1-12]");
+            if (isNaN(mounth) || mounth<1 || mounth>121)
+                  alert("Некорректный ввод. Попробуйте снова");
+            else break;
+      }
+      while (true)
+      {
+            year=prompt("Введите год вашего рождения");
+            if (isNaN(year) || mounth<1 || mounth>2023)
+                  alert("Некорректный ввод. Попробуйте снова");
+            else break;
+      }
+      let hpDay=new Date(year, mounth, day);
+      let nowDate=new Date();
+      let ageYear=nowDate.getFullYear()-hpDay.getFullYear();
+      console.log(ageYear);
+      let ageDay;
 }
