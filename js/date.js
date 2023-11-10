@@ -83,3 +83,16 @@ function task5() {
       console.log (`Ваш возраст в днях: ${Math.floor((nowDate-hpDay)/(1000*60*60*24))}`);
       console.log(`Ваш точный возраст: ${ageYear}г ${ageMounth}м ${ageDay}д`)
 }
+
+function task6() {
+      let arr=[];
+      let date=new Date();
+      for (let i=0;i<12;i++)
+      {
+            let dataCheck=new Date(date.getFullYear(), i, 13);
+            let dayweek=dataCheck.getDay(); 
+            if (dayweek==5)
+                  arr.push(dataCheck);
+      }
+      console.log(arr);
+}
