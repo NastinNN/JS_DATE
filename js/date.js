@@ -41,6 +41,7 @@ function task5() {
       let day;
       let mounth;
       let year;
+      // Тут каждая составляющая даты вводится по отдельности и проверяется на корректность ввода
       while (true)
       {
             day=prompt("Введите день вашего рождения [1-31]");
@@ -51,20 +52,34 @@ function task5() {
       while (true)
       {
             mounth=prompt("Введите месяц ващего рождения [1-12]");
-            if (isNaN(mounth) || mounth<1 || mounth>121)
+            if (isNaN(mounth) || mounth<1 || mounth>12)
                   alert("Некорректный ввод. Попробуйте снова");
             else break;
       }
       while (true)
       {
             year=prompt("Введите год вашего рождения");
-            if (isNaN(year) || mounth<1 || mounth>2023)
+            if (isNaN(year) || year<1 || year>2023)
                   alert("Некорректный ввод. Попробуйте снова");
             else break;
       }
-      let hpDay=new Date(year, mounth, day);
+      let hpDay=new Date(year, mounth-1, day); /**минус в месяце, потому что в датах месяцы начинаются с нуля */
       let nowDate=new Date();
       let ageYear=nowDate.getFullYear()-hpDay.getFullYear();
-      console.log(ageYear);
-      let ageDay;
+      let ageMounth=nowDate.getMonth()-hpDay.getMonth();
+      let ageDay=nowDate.getDate()-hpDay.getDate();
+      // Проверка на то, был ли уже ДР в этому году (для получения точного возраста)
+      if (new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate()) < new Date(nowDate.getFullYear(), hpDay.getMonth(), hpDay.getDate()))
+           ageYear--;
+      if (ageDay < 0) {
+            ageMounth--; /* Для получения более точного количества месяцев (потому что если др 11.6, а сегодня 10.11, то он выдаст 5 месяцев, а по факту прошло 4 мес и 30 д) */
+            ageDay=31+ +ageDay;
+      }
+      if (ageMounth<0)
+            ageMounth=12+ +ageMounth;
+      // Здесь сделала в жвух вариантах, потому что не поняла, какой всё таки результат нужно получить :D
+      console.log(`Ваш возраст в годах: ${ageYear}`);
+      console.log(`Ваш возраст в месяцах ${ageYear*12+ ageMounth}`)
+      console.log (`Ваш возраст в днях: ${Math.floor((nowDate-hpDay)/(1000*60*60*24))}`);
+      console.log(`Ваш точный возраст: ${ageYear}г ${ageMounth}м ${ageDay}д`)
 }
