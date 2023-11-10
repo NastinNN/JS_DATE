@@ -17,6 +17,17 @@ function task2() {
       console.log(`До нового года осталось ${koldayNY.toFixed(0)} дня`)
 }
 
+function task3() {
+      let data=new Date();
+      let dayWeek= ["Воскресенье","Понедельник", "Вторник", "Среда","Четверг", "Пятница", "Суббота"];
+      let dataObj={
+            next: dayWeek[(data.getDay())+1],
+            curr: dayWeek[(data.getDay())],
+            prev: dayWeek[(data.getDay())-1],
+            }
+      console.log(dataObj);
+}
+
 function task4() {
       let ms=prompt("Введите количество милисекунд");
       if(Number.isInteger(ms) || ms<0 || isNaN(ms))
