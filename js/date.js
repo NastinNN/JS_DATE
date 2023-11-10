@@ -110,3 +110,26 @@ function task7() {
       if ((Number(time)>=17 && Number(time)<24) || (Number(time)>=0 && Number(time)<4) )
             console.log("Добрый вечер!"); 
 }
+
+function task8() {
+      let date=new Date();
+      let dayWeek= ["Воскресенье","Понедельник", "Вторник", "Среда","Четверг", "Пятница", "Суббота"];
+      console.log("Официальные государственные праздники 2023");
+      let startNY=new Date(date.getFullYear(), 0, 1);
+      let endNY=new Date(date.getFullYear(), 0, 8);
+      console.log(`Новогодние каникулы 1-8 января: ${dayWeek[startNY.getDay()]}-${dayWeek[endNY.getDay()]}`);
+      let xmas=new Date(date.getFullYear(), 0, 7);
+      console.log(`Рождество Христово - 7 января: ${dayWeek[xmas.getDay()]}`);
+      let feb23=new Date(date.getFullYear(), 1, 23);
+      console.log(`День защитника Отечества - 23 февраля: ${dayWeek[feb23.getDay()]}`);
+      let march8=new Date(date.getFullYear(), 2, 8);
+      console.log(`Международный женский день - 8 марта: ${dayWeek[march8.getDay()]}`);
+      let may1=new Date(date.getFullYear(), 4, 1);
+      console.log(`Праздник Весны и Труда; - 1 мая: ${dayWeek[may1.getDay()]}`);
+      let may9=new Date(date.getFullYear(), 4, 9);
+      console.log(`День Победы - 9 мая: ${dayWeek[may9.getDay()]}`);
+      let jun12=new Date(date.getFullYear(), 5, 12);
+      console.log(`День России - 12 июня: ${dayWeek[jun12.getDay()]}`);
+      let nov4=new Date(date.getFullYear(), 10, 4);
+      console.log(`День народного единства - 4 ноября: ${dayWeek[nov4.getDay()]}`);
+}
