@@ -96,3 +96,17 @@ function task6() {
       }
       console.log(arr);
 }
+
+function task7() {
+      let date=new Date();
+      let time=date.getHours();
+      // Утро с 4 до 12
+      // День с 12 до 17
+      // Вечер с 17 до 4
+      if (Number(time)>=4 && Number(time)<12)
+            console.log ("Доброе утро!")
+      if (Number(time)>=12 && Number(time)<17)
+            console.log("Добрый день!");
+      if ((Number(time)>=17 && Number(time)<24) || (Number(time)>=0 && Number(time)<4) )
+            console.log("Добрый вечер!"); 
+}
