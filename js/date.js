@@ -14,7 +14,7 @@ function task2() {
       let data=new Date();
       let dataNY=new Date("January 1, 2024");
       let koldayNY=(dataNY-data)/1000/60/60/24;
-      console.log(`До нового года осталось ${koldayNY.toFixed(0)} дня`)
+      console.log(`Количество дней до нового года: ${koldayNY.toFixed(0)}`)
 }
 
 function task3() {
