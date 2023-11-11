@@ -20,10 +20,16 @@ function task2() {
 function task3() {
       let data=new Date();
       let dayWeek= ["Воскресенье","Понедельник", "Вторник", "Среда","Четверг", "Пятница", "Суббота"];
+      let nextday=dayWeek[(data.getDay())+1];
+      let prevday=dayWeek[(data.getDay())-1];
+      if ((data.getDay())==6)
+            nextday=dayWeek[0];
+      if ((data.getDay())==0)
+            prevday=dayWeek[6];
       let dataObj={
-            next: dayWeek[(data.getDay())+1],
+            next: nextday,
             curr: dayWeek[(data.getDay())],
-            prev: dayWeek[(data.getDay())-1],
+            prev: prevday,
             }
       console.log(dataObj);
 }
